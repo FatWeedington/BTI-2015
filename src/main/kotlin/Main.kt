@@ -1,5 +1,12 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import java.util.*
 
-    println("Program arguments: ${args.joinToString()}")
+object Main {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        val kotlinLogo: String =
+            """| //
+              .|//
+              .|/ \ """
+        println(kotlinLogo.trimMargin("."))
+    }
 }
