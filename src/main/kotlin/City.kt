@@ -30,7 +30,7 @@ class City{
         for(b in buildings){
             var buildingLines = b.lines()
             for (i in 1..6){
-                lines[i] += (buildingLines[i])
+                lines[i] += buildingLines[i]
             }
         }
         var result:String = ""
