@@ -2,8 +2,8 @@ fun doubleCase(s:String):String{
     val letters :String = s.filter {it.isLetter()}
     var result = "";
     for(l in letters){
-        result = result.plus(l.uppercase())
-        result = result.plus(l.lowercase())
+        result += (l.uppercase())
+        result += (l.lowercase())
     }
     return result
 }
