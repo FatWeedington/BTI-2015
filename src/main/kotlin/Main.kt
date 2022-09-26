@@ -12,5 +12,10 @@ object Main {
         var city = City()
         city.addBuilding(building1)
         println(city.show())
+
+        val date = "12.12.2022"
+
+        println(date.matches(getPattern()))
     }
+
 }
