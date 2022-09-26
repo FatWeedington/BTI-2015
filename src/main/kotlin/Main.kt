@@ -7,10 +7,10 @@ object Main {
             """| //
               .|//
               .|/ \ """
-        println(kotlinLogo.trimMargin("."))
+        print(kotlinLogo.trimMargin("."))
 
         var city = City()
         city.addBuilding(building1)
-        city.show()
+        println(city.show())
     }
 }
