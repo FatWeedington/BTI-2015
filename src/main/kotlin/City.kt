@@ -26,17 +26,16 @@ class City{
     var buildings = mutableListOf(building1,building3,building2,building3);
 
     fun show():String{
-
         var lines:Array<String> = Array(7) { "" }
         for(b in buildings){
             var buildingLines = b.lines()
             for (i in 1..6){
-                lines[i] = lines[i].plus(buildingLines[i])
+                lines[i] += (buildingLines[i])
             }
         }
         var result:String = ""
         for(l in lines){
-            result = result.plus(l).plus(System.lineSeparator())
+            result += l.plus(System.lineSeparator())
         }
         return result
     }
