@@ -8,5 +8,9 @@ object Main {
               .|//
               .|/ \ """
         println(kotlinLogo.trimMargin("."))
+
+        var city = City()
+        city.addBuilding(building1)
+        city.show()
     }
 }

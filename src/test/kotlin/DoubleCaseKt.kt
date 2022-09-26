@@ -3,20 +3,12 @@
 
 package strings
 
+import doubleCase
+import doubleCaseRec
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
-class DoubleCaseTestKt {
-
-    fun doubleCase(s:String):String{
-        val letters :String = s.filter {it.isLetter()}
-        var result = "";
-        for(l in letters){
-            result = result.plus(l.uppercase())
-            result = result.plus(l.lowercase())
-        }
-        return result
-    }
+class DoubleCaseKt {
 
     @Test
     fun testdoubleCase() {
@@ -27,4 +19,13 @@ class DoubleCaseTestKt {
         Assertions.assertEquals("", doubleCase("   . . . . "))
         Assertions.assertEquals("AaAaAaAa", doubleCase("%%%A A* A* A*"))
     }
+
+    @Test
+    fun testdoubleCaseRec() {
+        Assertions.assertEquals("", doubleCaseRec(""))
+        Assertions.assertEquals("Aa", doubleCaseRec("a"))
+        Assertions.assertEquals("Aa", doubleCaseRec("A"))
+        Assertions.assertEquals("AaBb", doubleCaseRec("aB"))
+        Assertions.assertEquals("", doubleCaseRec("   . . . . "))
+        Assertions.assertEquals("AaAaAaAa", doubleCaseRec("%%%A A* A* A*"))    }
 }
