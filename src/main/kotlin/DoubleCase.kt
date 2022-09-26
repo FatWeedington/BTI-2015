@@ -10,7 +10,7 @@ fun doubleCase(s:String):String{
 
 fun doubleCaseRec(s:String):String{
     val letters :String = s.filter {it.isLetter()}
-    return if (letters.isNotEmpty()){
+    return if (letters.isNotBlank()){
         letters.first().uppercase().plus(letters.first().lowercase()).plus(doubleCaseRec(letters.drop(1)))
     }
     else ""
