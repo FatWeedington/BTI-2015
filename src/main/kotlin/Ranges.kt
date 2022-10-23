@@ -12,10 +12,10 @@ val intRange = 1..10
     }
 
     fun getMedian(range: IntProgression): Double {
-      var intarray = emptyArray<Int>()
+      var intarray = intArrayOf()
         range.forEach { intarray += it }
         return if (intarray.size % 2 == 0) {
-            ((intarray[intarray.size / 2].toDouble() + intarray[intarray.size / 2 - 1].toDouble()) / 2)
+            (intarray[intarray.size / 2].toDouble() + intarray[intarray.size / 2 - 1].toDouble()) / 2
         } else {
             (intarray[intarray.size / 2]).toDouble()
         }

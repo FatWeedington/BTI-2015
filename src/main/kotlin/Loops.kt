@@ -12,7 +12,7 @@ fun numberGame(){
             println("Success")
             return
         }
-        if(guess < input){
+        else if(guess < input){
             println("Lower")
         }
         else {
