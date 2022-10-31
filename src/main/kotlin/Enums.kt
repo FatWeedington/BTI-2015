@@ -10,7 +10,12 @@ fun getDays(m: Month):Int{
 }
 
 fun getSeason(m: Month):Month.Season{
-    return m.season
+    return when(m){
+        Month.DECEMBER, Month.JANUARY,Month.FEBRUARY  -> Month.Season.WINTER
+        Month.MARCH, Month.APRIL,Month.MAY  -> Month.Season.SPRING
+        Month.JUNE,Month.JULY,Month.AUGUST  -> Month.Season.SUMMER
+        Month.OCTOBER,Month.NOVEMBER,Month.SEPTEMBER  -> Month.Season.FAll
+    }
 }
 
 fun getMonth(date: LocalDate):Month{
