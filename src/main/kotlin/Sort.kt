@@ -1,5 +1,4 @@
 import java.time.LocalDate
-import Canton
 
 enum class Canton { BE, JU, ZH }
 

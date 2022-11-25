@@ -24,8 +24,8 @@ fun numberGame(){
 }
 
 fun main() {
-    //while(true){numberGame()}
-    factoring(readln().toInt()).forEach { print("$it ") }
+    while(true){numberGame()}
+    //factoring(readln().toInt()).forEach { print("$it ") }
 }
 
 fun factoring(number:Int):IntArray{
