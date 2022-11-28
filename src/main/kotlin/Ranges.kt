@@ -3,7 +3,7 @@ import java.util.DoubleSummaryStatistics
 
 val intRange = 1..10
 
-    fun main(args: Array<String>) {
+    fun main() {
         intRange.forEach { println(it) }
         println(intRange.sum())
         println(intRange.average())
