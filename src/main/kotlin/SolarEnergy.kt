@@ -15,7 +15,6 @@ class Solar : View("MyFirstTornadoApp") {
     }
 }
 
-
 fun main(args: Array<String>) {
     launch<SolarEnergy>(args)
 }
