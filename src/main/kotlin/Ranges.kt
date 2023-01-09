@@ -1,6 +1,3 @@
-import java.awt.font.NumericShaper
-import java.util.DoubleSummaryStatistics
-
 val intRange = 1..10
 
     fun main() {

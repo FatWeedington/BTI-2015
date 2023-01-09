@@ -1,4 +1,3 @@
-import javafx.beans.binding.Bindings
 import javafx.scene.paint.Color
 import javafx.stage.Stage
 import tornadofx.*
@@ -21,17 +20,29 @@ class CircleView1 : View("Circle Binding") {
             vbox{
                 Alignment.CENTER
                 button("add"){
-                    action { numbers.add(numbers.size.toString()) }
+                    action { numbers.add((numbers.size + 1).toString()) }
                 }
                 button("Remove"){
-                    action { numbers.removeAt(numbers.size-1) }
+                      action {if(numbers.size > 0) numbers.removeAt(numbers.size-1) }
                 }
             }
         }
         center{
             flowpane{
-                bind
+                children.bind(numbers){
+                    stackpane {
+                        circle { fill = Color.PALEVIOLETRED
+                            radius = 40.0 }
+                        label(it)
+                    }
+                }
+
+
             }
         }
         }
     }
+
+fun main(args: Array<String>) {
+    launch<DynamicCircle>(args)
+}

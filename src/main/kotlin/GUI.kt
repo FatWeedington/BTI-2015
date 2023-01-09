@@ -1,8 +1,6 @@
-import com.sun.javafx.scene.control.TableColumnBaseHelper.setWidth
 import javafx.geometry.Pos
 import javafx.stage.Stage
 import tornadofx.*
-import java.awt.Button
 
 class GUI: App(Counter::class) {
     override fun start(stage: Stage) {

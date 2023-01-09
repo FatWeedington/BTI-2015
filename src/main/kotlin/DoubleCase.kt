@@ -17,3 +17,8 @@ fun doubleCaseRec(s:String):String{
     }
     else ""
 }
+
+fun main() {
+    println(doubleCase(readln()))
+    println(doubleCaseRec(readln()))
+}

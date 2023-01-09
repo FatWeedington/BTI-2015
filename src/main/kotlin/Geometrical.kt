@@ -1,4 +1,3 @@
-import java.util.DoubleSummaryStatistics
 import kotlin.math.pow
 
 interface Geometrical {

@@ -1,5 +1,8 @@
 import javafx.stage.Stage
-import tornadofx.*
+import tornadofx.App
+import tornadofx.View
+import tornadofx.launch
+import tornadofx.vbox
 
 class SolarEnergy: App(Solar::class) {
     override fun start(stage: Stage) {

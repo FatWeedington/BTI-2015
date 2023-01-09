@@ -1,4 +1,3 @@
-import java.lang.Math.sqrt
 import kotlin.random.Random
 
 fun numberGame(){

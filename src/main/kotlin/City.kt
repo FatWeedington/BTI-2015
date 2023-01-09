@@ -23,7 +23,7 @@ const val building1 = """
     "''""""
 
 class City{
-    private var buildings = mutableListOf(building1,building3,building2,building3);
+    private var buildings = mutableListOf(building1,building3,building2,building3)
 
     fun show():String{
         val lines:Array<String> = Array(7) { "" }
@@ -33,14 +33,25 @@ class City{
                 lines[i] += buildingLines[i]
             }
         }
-        var result:String = ""
+        var result = ""
         for(l in lines){
             result += l.plus(System.lineSeparator())
         }
         return result
     }
 
-    fun addBuilding(s:String){
-        buildings.add(s)
+    fun addBuilding(vararg s:String){
+        for((index,building) in s.withIndex()){
+            if (index < s.size -1)
+            addBuilding(building)
+            else break
+        }
+
     }
+}
+
+fun main() {
+    val city = City()
+    city.addBuilding(s = arrayOf(building1,building2,building3))
+    print(city.show())
 }

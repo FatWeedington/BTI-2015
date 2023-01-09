@@ -7,6 +7,6 @@ data class Building(val residents: Int = 0) {
 fun main() {
     var oldHouse = Building()
     println(oldHouse)
-    oldHouse = oldHouse.moveIn(5)
-    println(oldHouse.residents)
+    oldHouse = oldHouse.copy(residents = 5)
+    println(oldHouse)
 }
