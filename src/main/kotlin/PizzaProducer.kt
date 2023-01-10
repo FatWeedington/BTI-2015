@@ -41,8 +41,8 @@ fun main() {
         val producer2 = PizzaProducer("Peter")
         launch(Dispatchers.Default){producer.producePizzaOrders()}
         launch(Dispatchers.Default){producer2.producePizzaOrders()}
-        launch(Dispatchers.Default){ PizzaOrderConsumer().consume(pizzaChannel)}
-        launch(Dispatchers.Default){ PizzaOrderConsumer().consume(pizzaChannel)}
-        launch(Dispatchers.Default){ PizzaOrderConsumer().consume(pizzaChannel)}
+        launch(Dispatchers.Default){PizzaOrderConsumer().consume(pizzaChannel)}
+        launch(Dispatchers.Default){PizzaOrderConsumer().consume(pizzaChannel)}
+        launch(Dispatchers.Default){PizzaOrderConsumer().consume(pizzaChannel)}
     }
 }
