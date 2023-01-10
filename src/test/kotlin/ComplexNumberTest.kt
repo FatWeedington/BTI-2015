@@ -1,11 +1,10 @@
 package strings
-
 import ComplexNumber
 import minus
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Test
 import plus
 import times
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 internal class ComplexNumberTest {
 
