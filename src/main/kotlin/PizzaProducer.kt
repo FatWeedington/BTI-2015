@@ -16,6 +16,7 @@ class PizzaProducer(val waiter : String){
     }
     suspend fun producePizzaOrders() = coroutineScope{
         repeat(100) {
+            isActive
             pizzaChannel.send(PizzaOrder("${id.getAndIncrement()}",waiter))
             delay(100)
         }
@@ -31,7 +32,9 @@ class PizzaOrderConsumer{
     val name = "consumer ${id++}"
 
     suspend fun consume(channel : Channel<PizzaOrder>) = coroutineScope{
-        channel.consumeEach { println("$it consumed by $name") }
+        channel.consumeEach {
+            isActive
+            println("$it consumed by $name") }
     }
 }
 
@@ -39,10 +42,18 @@ fun main() {
     runBlocking {
         val producer = PizzaProducer("Hans")
         val producer2 = PizzaProducer("Peter")
-        launch(Dispatchers.Default){producer.producePizzaOrders()}
-        launch(Dispatchers.Default){producer2.producePizzaOrders()}
-        launch(Dispatchers.Default){PizzaOrderConsumer().consume(pizzaChannel)}
-        launch(Dispatchers.Default){PizzaOrderConsumer().consume(pizzaChannel)}
-        launch(Dispatchers.Default){PizzaOrderConsumer().consume(pizzaChannel)}
+        val job = launch{
+            yield()
+            launch(Dispatchers.Default){producer.producePizzaOrders()}
+            launch(Dispatchers.Default){producer2.producePizzaOrders()}
+            launch(Dispatchers.Default){PizzaOrderConsumer().consume(pizzaChannel)}
+            launch(Dispatchers.Default){PizzaOrderConsumer().consume(pizzaChannel)}
+            launch(Dispatchers.Default){PizzaOrderConsumer().consume(pizzaChannel)}
+        }
+        delay(5000)
+        job.cancel()
+        println("pess Q to cancle")
+        if(readln() == "Q")
+        job.start()
     }
 }
